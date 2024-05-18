@@ -75,10 +75,9 @@ public class BatchConfig {
 
             var transacao = new Transacao(
                     null, item.tipo(), null,
-                    null,
+                    item.valor().divide(BigDecimal.valueOf(100)),
                     item.cpf(), item.cartao(), null,
                     item.donoDaLoja().trim(), item.nomeDaLoja().trim())
-                    .withValor(item.valor().divide(BigDecimal.valueOf(100)))
                     .withData(item.data())
                     .withHora(item.hora());
 
